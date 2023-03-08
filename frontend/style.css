@@ -1,5 +1,6 @@
 body{
     margin: 0;
+    background-color: lightgray;
 }
 .header{
     width: 100%;
@@ -19,29 +20,26 @@ body{
     justify-content: space-between;
     flex-wrap: wrap;
     display: grid;
-
     grid-template-columns: repeat(3, 1fr);
-
     grid-auto-rows: auto;
-
-    grid-gap: 1rem;
+    grid-gap: 0.5rem;
 }
 .card {
     background-color: #fff;
     /*calc(33.33% - 20px);*/
-    margin-bottom: 30px;
+    margin-bottom: 5px;
     /*border-radius: 10px;*/
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     overflow: hidden;
     height: 300px;
-    grid-gap: 16px;
+    grid-gap: 10px;
     /*width: 500px;*/
     max-width:500px;
     min-width:300px;
 
     border: 2px #e7e7e7;
 
-    border-radius: 8px;
+    border-radius: 5px;
 
     padding: .5rem;
 }
@@ -50,10 +48,15 @@ body{
     width: 100%;
     height: 40%;
     object-fit: cover;
+    margin-bottom: -25px;
 }
 
 .card .container {
-    padding: 20px;
+    margin-top: 0px;
+    padding: 0px;
+    background-color: white;
+    border-radius:0px;
+    height: 100%;
 }
 
 @media screen and (max-width: 768px) {
