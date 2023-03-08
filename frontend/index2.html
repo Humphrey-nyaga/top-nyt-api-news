@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Top News</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<h1>Top News</h1>
+<form>
+  <label for="section">Select a section:</label>
+  <select id="section" name="section"></select>
+  <button type="submit">Get News</button>
+</form>
+
+<div class="articles-container"></div>
+
+<script type="module">
+  import { getArticles } from './app.js';
+
+  const sectionSelect = document.querySelector('#section');
+
+  fetch('sections.json')
+          .then(response => response.json())
+          .then(data => {
+            data.forEach(section => {
+              const option = document.createElement('option');
+              option.value = section.value;
+              option.textContent = section.name;
+              sectionSelect.appendChild(option);
+            });
+          });
+
+  const form = document.querySelector('form');
+
+  form.addEventListener('submit', (event) => {
+    event.preventDefault();
+    const section = sectionSelect.value;
+    getArticles(section);
+  });
+</script>
+</body>
+</html>

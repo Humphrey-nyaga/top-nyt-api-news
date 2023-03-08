@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Top News</title>
+    <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+<div class="header">
+<h1>Top News</h1>
+</div>
+<form>
+    <label for="section">Select a section:</label>
+    <select id="section" name="section">
+        <option value="home">Home</option>
+        <option value="world">World</option>
+        <option value="politics">Politics</option>
+        <option value="business">Business</option>
+        <option value="technology">Technology</option>
+        <option value="science">Science</option>
+        <option value="health">Health</option>
+        <option value="sports">Sports</option>
+        <option value="arts">Arts</option>
+        <option value="books">Books</option>
+        <option value="movies">Movies</option>
+        <option value="theater">Theater</option>
+        <option value="fashion">Fashion</option>
+        <option value="food">Food</option>
+        <option value="travel">Travel</option>
+        <option value="magazine">Magazine</option>
+        <option value="realestate">Real Estate</option>
+    </select>
+    <button type="submit">Get News</button>
+</form>
+
+<div class="articles-container"></div>
+
+<script type="module">
+    import { getArticles } from './app.js';
+
+    const form = document.querySelector('form');
+
+    form.addEventListener('submit', (event) => {
+        event.preventDefault();
+        const section = document.querySelector('#section').value;
+        getArticles(section);
+    });
+</script>
+<div class="footer">
+
+</div>
+</body>
+</html>
