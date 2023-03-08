@@ -1,5 +1,18 @@
+body{
+    margin: 0;
+}
 .header{
+    width: 100%;
+    background-color: grey;
+    display: flex;
+    flex-direction: column;
     text-align: center;
+    font-size: 17px;
+    font-family: 'Source Sans Pro', sans-serif;
+}
+.form-container{
+    background-color: grey;
+    display: flex;
 }
 .articles-container {
     /*display: flex;*/
